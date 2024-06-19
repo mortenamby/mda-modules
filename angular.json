@@ -97,6 +97,39 @@
           }
         }
       }
+    },
+    "mda-components": {
+      "projectType": "library",
+      "root": "projects/mda-components",
+      "sourceRoot": "projects/mda-components/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/mda-components/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/mda-components/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/mda-components/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/mda-components/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
   }
 }
